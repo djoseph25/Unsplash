@@ -23,8 +23,9 @@ submitForm.addEventListener('submit', function loadImage(e) {
 				const response = data.results.map((photo) => {
 					return `<div><img class='photo' src="${photo.urls.regular}"></div>`;
 				});
-				// console.log(response);
-				result.innerHTML = response;
+				// I had to go in and make a little correction because my map function was returning a comma as well I fix it with javascript join('') method
+				// console.log(response.join(''));
+				result.innerHTML = response.join('');
 			}
 			myReq.onerror = function (err) {
 				console.log('ERROR', err);
